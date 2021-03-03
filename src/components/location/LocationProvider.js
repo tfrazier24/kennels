@@ -4,7 +4,7 @@ import React, { useState, createContext } from "react"
 export const LocationContext = createContext()
 
 //This component establishes what data can be used
-export const LocationProvider = () => {
+export const LocationProvider = (props) => {
     const [locations, setLocations] = useState([])
 
     const getLocations = () => {
@@ -14,7 +14,7 @@ export const LocationProvider = () => {
     }
 
     const addLocation = locationObj => {
-        return fetch("http://localhost:8088/employees", {
+        return fetch("http://localhost:8088/locations", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
