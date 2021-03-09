@@ -24,7 +24,7 @@ export const AnimalList = () => {
     if (searchTerms !== "") {
       // If the search field is not blank, display matching animals
       const subset = animals.filter((animal) =>
-        animal.name.toLowerCase().includes(searchTerms)
+        animal.name.toLowerCase().includes(searchTerms) || animal.name.includes(searchTerms)
       );
       setFiltered(subset);
     } else {
