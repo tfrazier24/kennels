@@ -12,7 +12,7 @@ import { LocationList } from "./location/LocationList"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
 import { EmployeeForm } from "./employee/EmployeeForm"
-// import { LocationForm } from "./location/LocationForm"
+import { LocationForm } from "./location/LocationForm"
 
 export const ApplicationViews = () => {
     return (
@@ -50,7 +50,7 @@ export const ApplicationViews = () => {
                 <LocationList />
             </Route>
             <Route exact path="/locations/create">
-                {/* <LocationForm /> */}
+                <LocationForm />
             </Route>
             </LocationProvider>
 
