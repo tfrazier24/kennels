@@ -60,43 +60,41 @@ export const LocationForm = () => {
     }
 
     return (
-        <form className="employeeForm">
-            <h2 className="employeeForm__title">New Employee</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">Employee name:</label>
-                    <input 
-                    type="text"
-                     id="name" 
-                     onChange={handleControlledInputChange} 
-                     required autoFocus 
-                     className="form-control" 
-                     placeholder="Employee name" 
-                     value={employee.name}
-                     />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="location">Assign to location: </label>
-                    <select defaultValue={employee.locationId} 
-                    name="locationId" 
-                    onChange={handleControlledInputChange}
-                    id="locationId" 
-                    className="form-control" >
-                        <option value="0">Select a location</option>
-                        {locations.map(l => (
-                            <option key={l.id} value={l.id}>
-                                {l.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </fieldset>
-            <button className="btn btn-primary"
-              onClick={handleClickSaveLocation}>
-              Save Employee
-            </button>
-        </form>
-      )
+      <form className="locationForm">
+        <h2 className="locationForm__title">New Location</h2>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="name">Location name:</label>
+            <input
+              type="text"
+              id="name"
+              onChange={handleControlledInputChange}
+              required
+              autoFocus
+              className="form-control"
+              placeholder="Location name"
+              value={location.name}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              onChange={handleControlledInputChange}
+              required
+              autoFocus
+              className="form-control"
+              placeholder="Location Address"
+              value={location.address}
+            ></input>
+          </div>
+        </fieldset>
+        <button className="btn btn-primary" onClick={handleClickSaveLocation}>
+          Save Location
+        </button>
+      </form>
+    );
   }

@@ -46,6 +46,7 @@ export const AnimalProvider = (props) => {
         and the `addAnimal` function as keys. This
         allows any child elements to access them.
     */
+   //expose the different methods through the Context so they can be seen
     return (
         <AnimalContext.Provider value={{
             animals, getAnimals, addAnimal, getAnimalById, updateAnimal
