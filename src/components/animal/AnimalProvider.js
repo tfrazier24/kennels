@@ -15,6 +15,12 @@ export const AnimalProvider = (props) => {
         .then(setAnimals)
     }
 
+    const releaseAnimal = (animalId) => {
+      return fetch(`http://localhost:8088/animals/${animalId}`, {
+        method: "DELETE",
+      }).then(getAnimals);
+    };
+
     const addAnimal = animal => {
         return fetch("http://localhost:8088/animals", {
             method: "POST",
@@ -51,7 +57,7 @@ export const AnimalProvider = (props) => {
    //expose the different methods through the Context so they can be seen
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, addAnimal, getAnimalById, updateAnimal, searchTerms, setSearchTerms
+            animals, getAnimals, addAnimal, releaseAnimal, getAnimalById, updateAnimal, searchTerms, setSearchTerms
         }}>
             {props.children}
         </AnimalContext.Provider>
