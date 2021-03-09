@@ -7,6 +7,8 @@ export const AnimalContext = createContext()
 export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
 
+    const [ searchTerms, setSearchTerms ] = useState("") 
+
     const getAnimals = () => {
         return fetch("http://localhost:8088/animals")
         .then(res => res.json())
@@ -49,7 +51,7 @@ export const AnimalProvider = (props) => {
    //expose the different methods through the Context so they can be seen
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, addAnimal, getAnimalById, updateAnimal
+            animals, getAnimals, addAnimal, getAnimalById, updateAnimal, searchTerms, setSearchTerms
         }}>
             {props.children}
         </AnimalContext.Provider>
